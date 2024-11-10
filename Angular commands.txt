@@ -1,0 +1,18 @@
+// To create a new angular project.
+		ng new (name of project)
+Coding standard- name in all small and seperated by - instead of blank space.
+
+// To run a angular project
+		npm start
+Open terminal inside the project folder and type this command. (closing will stop the server)
+
+// ng n c ______ (name of component)
+This command enables us to create a new component (along with ts css and html files) into its own folder.
+
+
+
+
+
+
+
+

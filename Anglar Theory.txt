@@ -1,0 +1,78 @@
+S1V2 (Session 1 video 2) ---------------------------------------------[]
+Angular is a combiation of a JS framework and tools collection such as debugger and plugins.
+
+S1V3  ---------------------------------------------[]
+Why we use Angular framework.
+1. Maybe not for smaller applications but for making larger and much more complex applications Angular truly shines as it simplifies building.
+2. With react we write imperative(step wise instructions on what to do) code but angular offers declarative code.
+3. Angular offers us Components, which are basically custom HTML elements, which also offers code reusability. 
+4. It offers some OOP concepts (Depedency injection, classes, etc)
+5. TypeScript offers type checking over JS. This means we do datatype checking while writing the code instead of finding out this error while running the code.
+6. Angular is backword compatible. Meaning code written in Angular 2 will also wrok with latest. As adding of new features dont mean old one will be removed entirely.
+
+S1V5  ---------------------------------------------[]
+Angular CLI is a angular Command Line Interface, which is basically used to develop, run, test and manage Angular projects.
+
+S1V10 ---------------------------------------------[]
+Differnt CLI create different startting project. Meaning file structure may be very slightly off. But this dont affect the code or its quality.
+Inside SRC folder, main.ts is the file which will be executed as soon as browser loads. 
+To run a project we use npm start command as under the hood, it uses ng server (CLI).
+
+S1V11 ---------------------------------------------[]
+@Component is called a decorator and is a type script feature, It bascially adds meta data.
+And this allows us to crreate a custom html tag like element.
+Component naming rule,   NAME . Component . ts  <- Here just replace NAME with any appropriate name of your choice. We use component after name as identifier. eg- header.component.ts
+
+S1V14 ---------------------------------------------[]
+Properties in components
+Selector: Basically points to which html element component should inject into, Name of selector should be a 2 part name eg- app-component
+standalone: There a other type of component but we use standalone as it much better. (in depth later)
+styleurl and some angular versions use styleurls
+We try to build Angular project in 'angular component tree format' basically one component inside the other. we try to call bootstrapApplication() once for app.component
+This allows easy internbal communication and also allows the angular to build apps in hirerchy.
+
+S1V16: ---------------------------------------------[]
+while adding any new folder to src make sure you hve that entry into the angular.json as well. After this make sure to restart server. Some Angular version dont reflect change without that.
+
+
+Dymanic output part
+
+S1V17: ---------------------------------------------[]
+./ to go one level down from src.
+../ to go one level up from current folder.
+IMP- All the stuff you define and do in component class, can be accessed by the templete of that component. (Angular feature)
+
+S1V21: ---------------------------------------------[]
+STRING INTERPOLATION: {{}}   <- between these curly braces we can use any public property we have defined in out component class. (Higly simplified with the hepl form the angular).
+public is default variable property.
+We mostly use it between tags, for dynamic output. and for stuff like image src we use property binding. 
+
+PROPERTY Binding: 
+we wrap name of property in square brackets.  <img [src]="'assets/images/users'+randomUser.avatar" alt="">  <-  Basically here [src] is called property binding (as src is property of image tag). 
+We use property binding to bind a property with an expression. Eg string concat of 2 different variables etc. (above example). Basically dinding with DOM element.
+Note- concept of Attribute binding also exists. But used less eg- ARIA attributes.
+
+S1V24: ---------------------------------------------[]
+To access property within same class, we must use this. keyword.
+We mostly use getter and try to keep templete clean. This way getters allow us to do dome operation before returning the value. Remember we use/call getter as attribute and not method. 
+ 
+S1V25: ---------------------------------------------[]
+Event listener, in Angular we add even listener to tag using ()  and then just call methods from component class.
+State: A data that will have impact on the state of UI
+
+S1V27: ---------------------------------------------[]
+Angular detects when data changes and then checks if DOM elemens will be affected by this change. If yes then the UI is updated as per new state. Internally this is done by Zone.JS. 
+Extra: How it works is Zone looks for any user events or expiring timers.
+
+S1V28: ---------------------------------------------[]
+SIGNALS: It is like a container which hold any type of value, and when that value changes, angular updates the necessary UI. Basically it allows to do change detection efficiently than zone.
+As unlilke zone it dont have to check every component and every possibility where change can occur.
+Whenever we declare a property signal, we have to access it like a function. 
+
+In signals we use computed() insted of getter. As computed() function will only executed if value of the signal changes instead of everytime something changing. This is efficient.
+eg- imagePath = computed(() => 'assets/images/users/' + this.randomUser().avatar);   <-- Here imagepath and its UI will only change if the signal value "this.randomUser().avatar" changes.
+
+
+S1V29: ---------------------------------------------[]
+
+
